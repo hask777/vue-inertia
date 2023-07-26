@@ -42,4 +42,9 @@ require __DIR__.'/auth.php';
 
 Route::get('/post', [PostController::class, 'index'])->name('post.index');
 Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
+Route::get('/post/{post}', [PostController::class, 'show'])->name('post.show');
+
 Route::post('/post', [PostController::class, 'store'])->name('post.store');
+Route::get('/post/edit/{post}', [PostController::class, 'edit'])->name('post.edit');
+Route::patch('/post/{post}', [PostController::class, 'update'])->name('post.update');
+Route::delete('/post/{post}', [PostController::class, 'delete'])->name('post.delete');
